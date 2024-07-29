@@ -2,7 +2,7 @@ import {
   requireNativeComponent,
   UIManager,
   Platform,
-  type ViewStyle,
+  type ViewProps,
 } from 'react-native';
 
 const LINKING_ERROR =
@@ -11,11 +11,21 @@ const LINKING_ERROR =
   '- You rebuilt the app after installing the package\n' +
   '- You are not using Expo Go\n';
 
-type MeshGradientProps = {
-  color: string;
-  style: ViewStyle;
-};
-
+  export type MeshGradientProps = ViewProps & {
+    meshWidth: number;
+    meshHeight: number;
+    points: number[][];
+    primaryColors: string[];
+    secondaryColors: string[];
+    background?: string;
+    smoothsColors?: boolean;
+    colorSpace?: "device" | "perceptual";
+    isAnimated?: boolean;
+    borderRadius?: number;
+    animationDuration?: number;
+    animationType?: "sine" | "easeInOut";
+  };
+  
 const ComponentName = 'MeshGradientView';
 
 export const MeshGradientView =
