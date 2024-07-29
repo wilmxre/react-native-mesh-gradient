@@ -143,6 +143,8 @@ const styles = StyleSheet.create({
 <img src="https://github.com/user-attachments/assets/d98bc0fd-8b9f-44fe-80c7-aa9b69baad91" alt="Static MeshGradient 2" width="330"/>
 <img src="https://github.com/user-attachments/assets/cfd71e5f-aa19-4fa8-8064-bcd7f42a44ff" alt="Static MeshGradient 3" width="330"/>
 <img src="https://github.com/user-attachments/assets/9329f468-bfb0-4ba2-a3d8-ec5cdbd6996d" alt="Static MeshGradient 4" width="330"/>
+<img src="https://github.com/user-attachments/assets/31eb4547-99c9-4657-b0b5-0457879ec2e0" alt="Static MeshGradient 5" width="330"/>
+<img src="https://github.com/user-attachments/assets/eab5516f-1a37-462e-83f1-8ce75040d381" alt="Static MeshGradient 6" width="330"/>
 
 ### 2. Animated MeshGradient with `easeInOut` animation
 
