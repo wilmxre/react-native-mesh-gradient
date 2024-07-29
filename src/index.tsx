@@ -16,7 +16,7 @@ const LINKING_ERROR =
     meshHeight: number;
     points: number[][];
     primaryColors: string[];
-    secondaryColors: string[];
+    secondaryColors?: string[];
     background?: string;
     smoothsColors?: boolean;
     colorSpace?: "device" | "perceptual";
