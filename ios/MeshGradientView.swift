@@ -33,35 +33,7 @@ struct MeshGradientView: View {
         MeshGradient(
           width: meshWidth,
           height: meshHeight,
-          points: animationType == "sine"
-            ? [
-              .init(0, 0), .init(0.5, 0), .init(1, 0),
-              [
-                sinInRange(
-                  -0.8...(-0.2), offset: 0.439, timeScale: 0.342, t: t),
-                sinInRange(0.3...0.7, offset: 3.42, timeScale: 0.984, t: t),
-              ],
-              [
-                sinInRange(0.1...0.8, offset: 0.239, timeScale: 0.084, t: t),
-                sinInRange(0.2...0.8, offset: 5.21, timeScale: 0.242, t: t),
-              ],
-              [
-                sinInRange(1.0...1.5, offset: 0.939, timeScale: 0.084, t: t),
-                sinInRange(0.4...0.8, offset: 0.25, timeScale: 0.642, t: t),
-              ],
-              [
-                sinInRange(-0.8...0.0, offset: 1.439, timeScale: 0.442, t: t),
-                sinInRange(1.4...1.9, offset: 3.42, timeScale: 0.984, t: t),
-              ],
-              [
-                sinInRange(0.3...0.6, offset: 0.339, timeScale: 0.784, t: t),
-                sinInRange(1.0...1.2, offset: 1.22, timeScale: 0.772, t: t),
-              ],
-              [
-                sinInRange(1.0...1.5, offset: 0.939, timeScale: 0.056, t: t),
-                sinInRange(1.3...1.7, offset: 0.47, timeScale: 0.342, t: t),
-              ],
-            ] : points,
+          points: generatePoints(),
           colors: isAnimating ? secondaryColors : primaryColors,
           background: background,
           smoothsColors: smoothsColors,
@@ -70,31 +42,72 @@ struct MeshGradientView: View {
         .cornerRadius(borderRadius)
         .onAppear {
           if isAnimated {
-            animationType == "sine"
-              ? timer = Timer.scheduledTimer(
-                withTimeInterval: 0.01, repeats: true
-              ) { _ in
-                t += 0.02
-              }
-              : withAnimation(
-                .easeInOut(duration: animationDuration).repeatForever(
-                  autoreverses: true)
-              ) {
-                isAnimating.toggle()
-              }
+            startAnimation()
           }
+        }
+        .onDisappear {
+          stopAnimation()
         }
       } else {
         Text("MeshGradient is not available on this version of iOS.")
       }
     }
+  }
 
+  private func generatePoints() -> [SIMD2<Float>] {
+    if isAnimated {
+      if animationType == "sine" {
+        return [
+          .init(0, 0), .init(0.5, 0), .init(1, 0),
+          [
+            sinInRange(-0.8...(-0.2), offset: 0.439, timeScale: 0.342, t: t),
+            sinInRange(0.3...0.7, offset: 3.42, timeScale: 0.984, t: t),
+          ],
+          [
+            sinInRange(0.1...0.8, offset: 0.239, timeScale: 0.084, t: t),
+            sinInRange(0.2...0.8, offset: 5.21, timeScale: 0.242, t: t),
+          ],
+          [
+            sinInRange(1.0...1.5, offset: 0.939, timeScale: 0.084, t: t),
+            sinInRange(0.4...0.8, offset: 0.25, timeScale: 0.642, t: t),
+          ],
+          [
+            sinInRange(-0.8...0.0, offset: 1.439, timeScale: 0.442, t: t),
+            sinInRange(1.4...1.9, offset: 3.42, timeScale: 0.984, t: t),
+          ],
+          [
+            sinInRange(0.3...0.6, offset: 0.339, timeScale: 0.784, t: t),
+            sinInRange(1.0...1.2, offset: 1.22, timeScale: 0.772, t: t),
+          ],
+          [
+            sinInRange(1.0...1.5, offset: 0.939, timeScale: 0.056, t: t),
+            sinInRange(1.3...1.7, offset: 0.47, timeScale: 0.342, t: t),
+          ],
+        ]
+      }
+    }
+    return points
+  }
+
+  private func startAnimation() {
+    if animationType == "sine" {
+      timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true) { _ in
+        t += 0.02
+      }
+    } else if animationType == "easeInOut" {
+      withAnimation(.easeInOut(duration: animationDuration).repeatForever(autoreverses: true)) {
+        isAnimating.toggle()
+      }
+    }
+  }
+
+  private func stopAnimation() {
+    timer?.invalidate()
+    timer = nil
   }
 }
 
-func sinInRange(
-  _ range: ClosedRange<Float>, offset: Float, timeScale: Float, t: Float
-) -> Float {
+func sinInRange(_ range: ClosedRange<Float>, offset: Float, timeScale: Float, t: Float) -> Float {
   let amplitude = (range.upperBound - range.lowerBound) / 2
   let midPoint = (range.upperBound + range.lowerBound) / 2
   return midPoint + amplitude * sin(timeScale * t + offset)
