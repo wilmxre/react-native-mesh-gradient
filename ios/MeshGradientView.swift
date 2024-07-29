@@ -5,7 +5,6 @@
 //  Created by wilmxre on 27.07.2024.
 //
 
-import ExpoModulesCore
 import SwiftUI
 
 @available(iOS 16.0, *)

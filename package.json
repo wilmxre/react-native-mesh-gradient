@@ -3,29 +3,21 @@
   "version": "0.1.0",
   "description": "A React Native wrapper for the iOS MeshGradient API",
   "source": "./src/index.tsx",
-  "main": "./lib/commonjs/index.js",
-  "module": "./lib/module/index.js",
-  "types": "./lib/typescript/src/index.d.ts",
+  "main": "./src/index.tsx",
+  "types": "./src/index.tsx",
   "exports": {
     ".": {
-      "types": "./lib/typescript/src/index.d.ts",
-      "import": "./lib/module/index.js",
-      "require": "./lib/commonjs/index.js"
+      "types": "./src/index.tsx",
+      "import": "./src/index.tsx",
+      "require": "./src/index.tsx"
     }
   },
   "files": [
     "src",
-    "lib",
-    "android",
     "ios",
     "cpp",
     "*.podspec",
     "!ios/build",
-    "!android/build",
-    "!android/gradle",
-    "!android/gradlew",
-    "!android/gradlew.bat",
-    "!android/local.properties",
     "!**/__tests__",
     "!**/__fixtures__",
     "!**/__mocks__",
@@ -43,7 +35,12 @@
   "keywords": [
     "react-native",
     "ios",
-    "android"
+    "mesh gradient",
+    "swiftui mesh gradient",
+    "react-native mesh gradient",
+    "react-native meshgradient",
+    "react-native mesh-gradient",
+    "react-native-mesh-gradient"
   ],
   "repository": {
     "type": "git",
