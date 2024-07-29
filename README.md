@@ -1,4 +1,3 @@
-
 # react-native-mesh-gradient
 
 `react-native-mesh-gradient` is a React Native component for creating smooth, animated mesh gradients, by exposing the native [MeshGradient API](https://developer.apple.com/documentation/swiftui/meshgradient) to React Native. 
@@ -143,6 +142,7 @@ const styles = StyleSheet.create({
 <img src="https://github.com/user-attachments/assets/749554c2-f4dd-4162-8887-b1afc3f59237" alt="Static MeshGradient 1" width="330"/>
 <img src="https://github.com/user-attachments/assets/d98bc0fd-8b9f-44fe-80c7-aa9b69baad91" alt="Static MeshGradient 2" width="330"/>
 <img src="https://github.com/user-attachments/assets/cfd71e5f-aa19-4fa8-8064-bcd7f42a44ff" alt="Static MeshGradient 3" width="330"/>
+<img src="https://github.com/user-attachments/assets/9329f468-bfb0-4ba2-a3d8-ec5cdbd6996d" alt="Static MeshGradient 4" width="330"/>
 
 ### 2. Animated MeshGradient with `easeInOut` animation
 
@@ -174,11 +174,11 @@ An array of points defining the mesh. Each point is an array of two numbers repr
 
 ### `primaryColors` (string[]) [required]
 
-An array of primary colors containing `width x height` elements.
+An array of primary colors containing `width x height` elements. The colors should be in 6 digit hex format (ex.: `#FF9F0A`).
 
 ### `secondaryColors` (string[]) [optional]
 
-An array of secondary colors containing `width x height` elements. Only required, if `isAnimated` is true.
+An array of secondary colors containing `width x height` elements. The colors should be in 6 digit hex format (ex.: `#FF9F0A`). Only required, if `isAnimated` is true. 
 
 ### `background` (string) [optional]
 
