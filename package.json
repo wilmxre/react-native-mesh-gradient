@@ -1,5 +1,5 @@
 {
-  "name": "react-native-mesh-gradient",
+  "name": "@wilmxre/react-native-mesh-gradient",
   "version": "0.1.0",
   "description": "A React Native wrapper for the iOS MeshGradient API",
   "source": "./src/index.tsx",
