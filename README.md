@@ -5,6 +5,18 @@
 This library is iOS only.
 
 
+## Concept
+
+<img src="https://github.com/user-attachments/assets/593dd534-138d-4744-8e9d-ad125c5dcec0" alt="Mesh" width="497"/>
+<img src="https://github.com/user-attachments/assets/d08fad06-36cc-4e79-9b3d-ac405eb710eb" alt="MeshGradient with Points" width="500"/>
+<img src="https://github.com/user-attachments/assets/2d34641c-1d46-4090-bd0b-e83e16957999" alt="MeshGradient Modified" width="497"/>
+<img src="https://github.com/user-attachments/assets/8a2fdc7e-a2b3-4ca4-a337-33bda26dde6f" alt="MeshGradient" width="504"/>
+
+## Description (copied from Apple Docs)
+
+Each vertex has a position, a color and four surrounding Bezier control points (leading, top, trailing, bottom) that define the tangents connecting the vertex with its four neighboring vertices. (Vertices on the corners or edges of the mesh have less than four neighbors, they ignore their extra control points.) Control points may either be specified explicitly or implicitly.
+
+When rendering, a tessellated sequence of Bezier patches are created, and vertex colors are interpolated across each patch, either linearly, or via another set of cubic curves derived from how the colors change between neighbors – the latter typically gives smoother color transitions.
 
 ## Prerequisite
 
@@ -35,21 +47,21 @@ import { MeshGradient } from 'react-native-mesh-gradient';
 const  MATRIX_DIMENSION  =  3;
 
 const points = [
-	[0.0, 0.0], [0.2, 0.0], [1.0, 0.0],
+    [0.0, 0.0], [0.2, 0.0], [1.0, 0.0],
     [0.0, 0.3], [0.4, 0.9], [1.0, 0.1],
     [0.0, 1.0], [0.3, 1.0], [1.0, 1.0],
 ];
 
-  const primaryColors = [
-	  "#E68369", "#E68369", "#B692C2",
-	  "#B692C2", "#FBF6E2", "#FBF6E2",
-	  "#E68369", "#E68369", "#E68369",
+const primaryColors = [
+    "#E68369", "#E68369", "#B692C2",
+    "#B692C2", "#FBF6E2", "#FBF6E2",
+    "#E68369", "#E68369", "#E68369",
 ];
 
-  const secondaryColors = [
-	  "#000000", "#000000", "#000000",
-	  "#FF9F0A", "#FF453A", "#FF9F0A",
-	  "#5E5CE6", "#000000", "#30D158",
+const secondaryColors = [
+    "#000000", "#000000", "#000000",
+    "#FF9F0A", "#FF453A", "#FF9F0A",
+    "#5E5CE6", "#000000", "#30D158",
 ];
 
 const App = () => {
@@ -89,6 +101,22 @@ const styles = StyleSheet.create({
   },
 });
 ```
+
+## Demo
+
+### 1. Static MeshGradient
+
+<img src="https://github.com/user-attachments/assets/749554c2-f4dd-4162-8887-b1afc3f59237" alt="Static MeshGradient 1" width="330"/>
+<img src="https://github.com/user-attachments/assets/d98bc0fd-8b9f-44fe-80c7-aa9b69baad91" alt="Static MeshGradient 2" width="330"/>
+<img src="https://github.com/user-attachments/assets/cfd71e5f-aa19-4fa8-8064-bcd7f42a44ff" alt="Static MeshGradient 3" width="330"/>
+
+### 2. Animated MeshGradient with `easeInOut` animation
+
+https://github.com/user-attachments/assets/39a029af-cc56-4de5-930e-3783e7da6127
+
+### 3. Animated MeshGradient with `sine` animation
+
+https://github.com/user-attachments/assets/bcb0e8f9-c38c-41f9-968d-7976ccbca01c
 
 ## Props
 
