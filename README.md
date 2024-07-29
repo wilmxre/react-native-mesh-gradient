@@ -5,12 +5,22 @@
 This library is iOS only.
 
 
-## Concept
+<details open>
+  
+<summary><b>Concept</b></summary>
 
-<img src="https://github.com/user-attachments/assets/593dd534-138d-4744-8e9d-ad125c5dcec0" alt="Mesh" width="497"/>
-<img src="https://github.com/user-attachments/assets/d08fad06-36cc-4e79-9b3d-ac405eb710eb" alt="MeshGradient with Points" width="500"/>
-<img src="https://github.com/user-attachments/assets/2d34641c-1d46-4090-bd0b-e83e16957999" alt="MeshGradient Modified" width="497"/>
-<img src="https://github.com/user-attachments/assets/8a2fdc7e-a2b3-4ca4-a337-33bda26dde6f" alt="MeshGradient" width="504"/>
+ ## Concept
+
+<img src="https://github.com/user-attachments/assets/593dd534-138d-4744-8e9d-ad125c5dcec0" alt="Mesh" width="600"/>
+<img src="https://github.com/user-attachments/assets/d08fad06-36cc-4e79-9b3d-ac405eb710eb" alt="MeshGradient with Points" width="600"/>
+<img src="https://github.com/user-attachments/assets/2d34641c-1d46-4090-bd0b-e83e16957999" alt="MeshGradient Modified" width="600"/>
+<img src="https://github.com/user-attachments/assets/8a2fdc7e-a2b3-4ca4-a337-33bda26dde6f" alt="MeshGradient" width="600"/>
+
+</details>
+
+<details open>
+
+<summary><b>Description (copied from Apple Docs)</b></summary>
 
 ## Description (copied from Apple Docs)
 
@@ -18,10 +28,22 @@ Each vertex has a position, a color and four surrounding Bezier control points (
 
 When rendering, a tessellated sequence of Bezier patches are created, and vertex colors are interpolated across each patch, either linearly, or via another set of cubic curves derived from how the colors change between neighbors – the latter typically gives smoother color transitions.
 
+</details>
+
+<details open>
+  
+<summary><b>Prerequisite</b></summary>
+
 ## Prerequisite
 
 The native API is still in beta and it only supports `iOS 18.0+` so far. Be aware of this, if you want to use this component. 
 You can read more on the Apple Official Documentation: https://developer.apple.com/documentation/swiftui/meshgradient
+
+</details>
+
+<details open>
+  
+<summary><b>Installation</b></summary>
 
 ## Installation
 
@@ -36,6 +58,12 @@ or
 ```bash
 yarn add react-native-mesh-gradient
 ```
+
+</details>
+
+<details open>
+  
+<summary><b>Usage</b></summary>
 
 ## Usage
 
@@ -101,6 +129,12 @@ const styles = StyleSheet.create({
   },
 });
 ```
+</details>
+
+
+<details open>
+  
+<summary><b>Demo</b></summary>
 
 ## Demo
 
@@ -117,6 +151,12 @@ https://github.com/user-attachments/assets/39a029af-cc56-4de5-930e-3783e7da6127
 ### 3. Animated MeshGradient with `sine` animation
 
 https://github.com/user-attachments/assets/bcb0e8f9-c38c-41f9-968d-7976ccbca01c
+
+</details>
+
+<details open>
+  
+<summary><b>Props</b></summary>
 
 ## Props
 
@@ -162,19 +202,33 @@ The border radius of the MeshGradient view. Default is `0`.
 
 ### `animationDuration` (number) [optional]
 
-The length of time, expressed in seconds, that the animation takes to complete. Default is `5`.
+The length of time, expressed in seconds, that the animation takes to complete. Default is `5`. Specify only if `isAnimated` prop is true.
 
 ### `animationType` ("sine" | "easeInOut") [optional]
 
-The type of animation to use. Can be `"sine"` or `"easeInOut"`. Default is `"sine"`.
+The type of animation to use. Can be `"sine"` or `"easeInOut"`. Default is `"sine"`. Specify only if `isAnimated` prop is true.
+
+</details>
+
+<details open>
+  
+<summary><b>Contributing</b></summary>
 
 ## Contributing
 
 Contributions are welcome! Please open an issue or submit a pull request if you have any improvements or bug fixes.
 
+</details>
+
+<details open>
+  
+<summary><b>License</b></summary>
+
 ## License
 
 This project is licensed under the MIT License. See the [LICENSE](./LICENSE) file for details.
+
+</details>
 
 ---
 
