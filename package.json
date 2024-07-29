@@ -2,14 +2,14 @@
   "name": "@wilmxre/react-native-mesh-gradient",
   "version": "0.1.0",
   "description": "A React Native wrapper for the iOS MeshGradient API",
-  "source": "./src/index.tsx",
-  "main": "./src/index.tsx",
-  "types": "./src/index.tsx",
+  "main": "./lib/commonjs/index.js",
+  "module": "./lib/module/index.js",
+  "types": "./lib/typescript/src/index.d.ts",
   "exports": {
     ".": {
-      "types": "./src/index.tsx",
-      "import": "./src/index.tsx",
-      "require": "./src/index.tsx"
+      "types": "./lib/typescript/src/index.d.ts",
+      "import": "./lib/module/index.js",
+      "require": "./lib/commonjs/index.js"
     }
   },
   "files": [
