@@ -49,13 +49,13 @@ You can read more on the Apple Official Documentation: https://developer.apple.c
 You can install the package using npm or yarn:
 
 ```bash
-npm install react-native-mesh-gradient && cd ios && pod install
+npm install @wilmxre/react-native-mesh-gradient && cd ios && pod install
 ```
 
 or
 
 ```bash
-yarn add react-native-mesh-gradient && cd ios && pod install
+yarn add @wilmxre/react-native-mesh-gradient && cd ios && pod install
 ```
 
 </details>
