@@ -1,6 +1,6 @@
-# react-native-mesh-gradient
+# @wilmxre/react-native-mesh-gradient
 
-`react-native-mesh-gradient` is a React Native component for creating smooth, animated mesh gradients, by exposing the native [MeshGradient API](https://developer.apple.com/documentation/swiftui/meshgradient) to React Native. 
+`@wilmxre/react-native-mesh-gradient` is a React Native component for creating smooth, animated mesh gradients, by exposing the native [MeshGradient API](https://developer.apple.com/documentation/swiftui/meshgradient) to React Native. 
 This library is iOS only.
 
 
@@ -59,6 +59,17 @@ yarn add @wilmxre/react-native-mesh-gradient && cd ios && pod install
 ```
 
 </details>
+
+<details open>
+
+<summary>Expo support</summary>
+
+## Expo support
+
+To use this library with Expo, you will need to create a development build. Expo Go does not support custom native modules. For information on how to create and run a development build, visit:  [Create a development build - Expo Documentation](https://docs.expo.dev/develop/development-builds/create-a-build/). 
+
+</details>
+
 
 <details open>
   
