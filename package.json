@@ -14,6 +14,7 @@
   },
   "files": [
     "src",
+    "lib",
     "ios",
     "cpp",
     "*.podspec",
